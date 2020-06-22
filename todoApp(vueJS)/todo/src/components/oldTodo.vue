@@ -38,7 +38,7 @@ export default {
         .get("localhost:8000/list_all_undonetodo/" + localStorage.mail)
         .then(response => {
           if (response.data[1].length > 0) {
-            todos = response;
+            this.todos = response;
           }
         });
     },
@@ -46,8 +46,8 @@ export default {
       this.$emit("authenticated", true);
       this.$router.replace({ name: "TodoList" });
     },
-    undoneToDo(index){      
-      PickId=todos[index].id  
+    undoneToDo(index){
+      PickId=this.todos[index].id
         axios
         .get("localhost:8000/undonetodo/" + PickId)
         .then(response => {

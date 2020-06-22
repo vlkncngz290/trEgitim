@@ -99,7 +99,7 @@ export default {
         });
     },
     doneTodo(index) {
-      Pickid = todos[index].id;
+      Pickid = this.todos[index].id;
       axios.get("localhost:8000/donetodo/" + Pickid).then(response => {
         this.todos.splice(index, 1);
       });
@@ -109,7 +109,7 @@ export default {
         .get("localhost:8000/list_all_todo/" + localStorage.mail)
         .then(response => {
           if (response.data[1].length > 0) {
-            todos = response;
+            this.todos = response;
           }
         });
     },
