@@ -31,8 +31,8 @@ export default {
           this.$router.replace({ name: "TodoList" });
         }
       });
-    },
     }
+
   }
 };
 </script>
