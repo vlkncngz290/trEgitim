@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     login() {
-      axios.get("localhost:8000/sign_in/"+userMail+"/"+userPass).then(response => {
+      axios.get("localhost:8000/sign_in/"+this.userMail+"/"+this.userPass).then(response => {
         if (response.data[1].length > 0) {
           localStorage.id = response.data[0];
           localStorage.mail = response.data[1];
